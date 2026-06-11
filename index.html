@@ -89,6 +89,32 @@ section h2 { text-align: center; font-size: 30px; margin: 0 0 8px; }
 .steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; color: var(--muted); }
 .steps span { background: var(--panel-2); border: 1px solid var(--line); padding: 12px 18px; border-radius: 10px; }
 
+/* Creator tools */
+.tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+.tool {
+  display: block; text-decoration: none; color: inherit;
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: 14px; padding: 20px;
+  transition: transform .1s ease, border-color .15s ease;
+}
+.tool:hover { transform: translateY(-3px); border-color: var(--brand-2); }
+.tool .tag { font-size: 12px; font-weight: 600; color: var(--brand-2); text-transform: uppercase; letter-spacing: .4px; }
+.tool h3 { margin: 8px 0 6px; font-size: 17px; color: #fff; }
+.tool p { margin: 0; color: var(--muted); font-size: 13.5px; }
+
+/* Contact */
+.contact-card {
+  max-width: 560px; margin: 0 auto; text-align: center;
+  background: var(--panel-2); border: 1px solid var(--line);
+  border-radius: 16px; padding: 30px;
+}
+.contact-card .rows { display: flex; flex-direction: column; gap: 12px; margin-top: 18px; }
+.contact-card .rows a, .contact-card .rows span {
+  color: #c7d2fe; text-decoration: none; font-size: 15px;
+  background: #0b1220; border: 1px solid var(--line);
+  padding: 12px 16px; border-radius: 10px;
+}
+
 /* Publish form */
 .form-wrap {
   max-width: 560px; margin: 0 auto;
@@ -142,6 +168,53 @@ section h2 { text-align: center; font-size: 30px; margin: 0 0 8px; }
 </div>
 </section>
 
+<section id="tools">
+<h2>Creator Tools</h2>
+<p class="sub">Apps and resources image creators can pick up to shoot, edit, and grow.</p>
+<div class="tools">
+  <a class="tool" href="https://www.adobe.com/products/photoshop-lightroom.html" target="_blank" rel="noopener">
+    <div class="tag">Photo editing</div>
+    <h3>Adobe Lightroom</h3>
+    <p>Organize, retouch, and color-grade photos with presets that keep your feed consistent.</p>
+  </a>
+  <a class="tool" href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noopener">
+    <div class="tag">Retouching</div>
+    <h3>Adobe Photoshop</h3>
+    <p>Pixel-level retouching, compositing, and graphics — the studio standard for image work.</p>
+  </a>
+  <a class="tool" href="https://www.captureone.com/" target="_blank" rel="noopener">
+    <div class="tag">Pro RAW</div>
+    <h3>Capture One</h3>
+    <p>Tethered shooting and precise RAW processing favored by portrait and product photographers.</p>
+  </a>
+  <a class="tool" href="https://www.canva.com/" target="_blank" rel="noopener">
+    <div class="tag">Quick graphics</div>
+    <h3>Canva</h3>
+    <p>Spin up thumbnails, story templates, and promo graphics without a design background.</p>
+  </a>
+  <a class="tool" href="https://www.figma.com/" target="_blank" rel="noopener">
+    <div class="tag">Design</div>
+    <h3>Figma</h3>
+    <p>Collaborative design canvas for layouts, brand kits, and pitch decks for clients.</p>
+  </a>
+  <a class="tool" href="https://procreate.com/" target="_blank" rel="noopener">
+    <div class="tag">Illustration</div>
+    <h3>Procreate</h3>
+    <p>Hand-drawn illustration and lettering on iPad for artists and album-art commissions.</p>
+  </a>
+  <a class="tool" href="https://unsplash.com/" target="_blank" rel="noopener">
+    <div class="tag">Stock assets</div>
+    <h3>Unsplash</h3>
+    <p>Free high-resolution photography to layer into moodboards, mockups, and content.</p>
+  </a>
+  <a class="tool" href="https://firefly.adobe.com/" target="_blank" rel="noopener">
+    <div class="tag">AI tools</div>
+    <h3>Adobe Firefly</h3>
+    <p>Generative fill and AI image creation to speed up concepting and background work.</p>
+  </a>
+</div>
+</section>
+
 <section id="join">
 <h2>Publish Your Profile</h2>
 <p class="sub">Add yourself to the directory in seconds. It's free.</p>
@@ -192,6 +265,20 @@ section h2 { text-align: center; font-size: 30px; margin: 0 0 8px; }
     </div>
     <div class="status" id="form-status"></div>
   </form>
+</div>
+</section>
+
+<section id="contact">
+<h2>Get in Touch</h2>
+<p class="sub">Questions, partnerships, or want to be featured? Reach out.</p>
+<div class="contact-card">
+  <div class="rows">
+    <a href="mailto:hello@creatorhub.example">Email — hello@creatorhub.example</a>
+    <a href="https://instagram.com/creatorhub" target="_blank" rel="noopener">Instagram — @creatorhub</a>
+    <a href="https://x.com/creatorhub" target="_blank" rel="noopener">X / Twitter — @creatorhub</a>
+    <span>Phone — +1 (000) 000-0000</span>
+  </div>
+  <p class="note">Update these with your real contact details.</p>
 </div>
 </section>
 
