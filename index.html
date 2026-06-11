@@ -3,80 +3,114 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Creator Hub</title>
+<title>Creator Hub — Connect. Collaborate. Grow.</title>
 
 <style>
-body {
-margin: 0;
-font-family: Arial, sans-serif;
-background: #0b0c10;
-color: #ffffff;
+:root {
+  --bg: #0b0c10;
+  --panel: #111827;
+  --panel-2: #0f172a;
+  --line: #1f2937;
+  --brand: #4f46e5;
+  --brand-2: #6366f1;
+  --text: #ffffff;
+  --muted: #9ca3af;
 }
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+a { color: var(--brand-2); }
 
 header {
-text-align: center;
-padding: 80px 20px;
-background: linear-gradient(135deg, #111827, #1f2937);
+  text-align: center;
+  padding: 90px 20px 70px;
+  background: radial-gradient(1200px 400px at 50% -50%, #312e81 0%, transparent 60%),
+              linear-gradient(135deg, #111827, #1f2937);
 }
 
-header h1 {
-font-size: 42px;
-margin-bottom: 10px;
-}
+header h1 { font-size: 44px; margin: 0 0 12px; letter-spacing: -0.5px; }
+header p { color: #cbd5e1; max-width: 560px; margin: 0 auto 24px; font-size: 18px; }
 
 button {
-padding: 12px 18px;
-margin: 8px;
-border: none;
-border-radius: 6px;
-cursor: pointer;
+  padding: 12px 20px;
+  margin: 6px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: transform .08s ease, opacity .15s ease;
 }
+button:hover { transform: translateY(-1px); }
+button:active { transform: translateY(0); }
 
-.primary {
-background: #4f46e5;
-color: white;
-}
+.primary { background: var(--brand); color: #fff; }
+.secondary { background: transparent; border: 1px solid #4b5563; color: #fff; }
 
-.secondary {
-background: transparent;
-border: 1px solid #fff;
-color: white;
-}
+section { padding: 64px 20px; max-width: 1080px; margin: 0 auto; }
+section h2 { text-align: center; font-size: 30px; margin: 0 0 8px; }
+.sub { text-align: center; color: var(--muted); margin: 0 0 36px; }
 
-section {
-padding: 60px 20px;
-text-align: center;
-}
-
-.cards {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 20px;
-}
+.cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
 
 .card {
-background: #111827;
-padding: 20px;
-border-radius: 12px;
-width: 220px;
+  background: var(--panel);
+  padding: 22px;
+  border-radius: 14px;
+  width: 250px;
+  text-align: left;
+  border: 1px solid var(--line);
 }
+.card .avatar {
+  width: 52px; height: 52px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 20px; color: #fff;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  margin-bottom: 14px;
+}
+.card h3 { margin: 0 0 4px; font-size: 18px; }
+.card .cat { color: var(--brand-2); font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+.card .bio { color: var(--muted); font-size: 14px; min-height: 20px; }
+.card .links { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+.card .links a {
+  font-size: 12px; text-decoration: none; color: #c7d2fe;
+  background: #1e1b4b; padding: 4px 10px; border-radius: 999px;
+}
+.empty { color: var(--muted); text-align: center; width: 100%; }
 
-.plan {
-background: #0f172a;
-border: 1px solid #1f2937;
-padding: 20px;
-border-radius: 12px;
-width: 250px;
-}
+.steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; color: var(--muted); }
+.steps span { background: var(--panel-2); border: 1px solid var(--line); padding: 12px 18px; border-radius: 10px; }
 
-.footer {
-background: #0a0a0f;
-padding: 30px;
-text-align: center;
-font-size: 14px;
-color: #9ca3af;
+/* Publish form */
+.form-wrap {
+  max-width: 560px; margin: 0 auto;
+  background: var(--panel-2); border: 1px solid var(--line);
+  border-radius: 16px; padding: 28px;
 }
+.form-wrap label { display: block; font-size: 13px; color: #cbd5e1; margin: 14px 0 6px; font-weight: 600; }
+.form-wrap input, .form-wrap textarea, .form-wrap select {
+  width: 100%; padding: 11px 12px; border-radius: 8px;
+  background: #0b1220; border: 1px solid var(--line); color: #fff; font-size: 14px;
+}
+.form-wrap textarea { resize: vertical; min-height: 80px; }
+.row { display: flex; gap: 12px; }
+.row > div { flex: 1; }
+.note { color: var(--muted); font-size: 13px; margin-top: 16px; text-align: center; }
+.status { text-align: center; margin-top: 14px; font-size: 14px; min-height: 20px; }
+.status.ok { color: #34d399; }
+.status.err { color: #f87171; }
+
+.footer { background: #0a0a0f; padding: 36px; text-align: center; font-size: 14px; color: var(--muted); }
+
+@media (max-width: 520px) { .row { flex-direction: column; } header h1 { font-size: 34px; } }
 </style>
 </head>
 
@@ -84,53 +118,171 @@ color: #9ca3af;
 
 <header>
 <h1>Connect. Collaborate. Grow.</h1>
-<p>Professional platform for creators and collaboration opportunities.</p>
-<button class="primary">Browse Creators</button>
-<button class="secondary">Join as Creator</button>
+<p>A professional directory where creators publish their profile, get discovered, and find collaboration opportunities.</p>
+<button class="primary" onclick="document.getElementById('browse').scrollIntoView({behavior:'smooth'})">Browse Creators</button>
+<button class="secondary" onclick="document.getElementById('join').scrollIntoView({behavior:'smooth'})">Publish Your Profile</button>
 </header>
 
-<section>
+<section id="browse">
 <h2>Featured Creators</h2>
-<div class="cards">
-<div class="card">Creator Profile</div>
-<div class="card">Creator Profile</div>
-<div class="card">Creator Profile</div>
+<p class="sub">Live profiles published by the community.</p>
+<div class="cards" id="creator-list">
+  <p class="empty">Loading creators…</p>
 </div>
 </section>
 
 <section>
 <h2>How It Works</h2>
-<p>Create profile &rarr; Get discovered &rarr; Collaborate &rarr; Grow</p>
+<p class="sub">Free to join — no application fee.</p>
+<div class="steps">
+  <span>1 · Publish your profile</span>
+  <span>2 · Get discovered</span>
+  <span>3 · Collaborate</span>
+  <span>4 · Grow your audience</span>
+</div>
 </section>
 
-<section>
-<h2>Membership Plans</h2>
-<div class="cards">
+<section id="join">
+<h2>Publish Your Profile</h2>
+<p class="sub">Add yourself to the directory in seconds. It's free.</p>
+<div class="form-wrap">
+  <form id="creator-form">
+    <label for="name">Display name *</label>
+    <input id="name" name="name" maxlength="80" placeholder="e.g. Jordan Rivera" required>
 
-<div class="plan">
-<h3>Starter</h3>
-<p>$60 / 3 months</p>
-<p>Basic listing &amp; access</p>
-</div>
+    <label for="category">What do you do?</label>
+    <select id="category" name="category">
+      <option>Creator</option>
+      <option>Musician</option>
+      <option>Photographer</option>
+      <option>Videographer</option>
+      <option>Designer</option>
+      <option>Writer</option>
+      <option>Streamer</option>
+      <option>Podcaster</option>
+      <option>Artist</option>
+    </select>
 
-<div class="plan">
-<h3>Professional</h3>
-<p>$100 / 6 months</p>
-<p>Featured visibility</p>
-</div>
+    <label for="bio">Short bio</label>
+    <textarea id="bio" name="bio" maxlength="400" placeholder="A sentence or two about your work and what you're looking to collaborate on."></textarea>
 
-<div class="plan">
-<h3>Premium</h3>
-<p>$150 / year</p>
-<p>Top exposure &amp; badge</p>
-</div>
+    <div class="row">
+      <div>
+        <label for="twitter">X / Twitter</label>
+        <input id="twitter" name="twitter" maxlength="80" placeholder="@handle">
+      </div>
+      <div>
+        <label for="instagram">Instagram</label>
+        <input id="instagram" name="instagram" maxlength="80" placeholder="@handle">
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <label for="tiktok">TikTok</label>
+        <input id="tiktok" name="tiktok" maxlength="80" placeholder="@handle">
+      </div>
+      <div>
+        <label for="website">Website</label>
+        <input id="website" name="website" maxlength="200" placeholder="yoursite.com">
+      </div>
+    </div>
 
+    <div style="margin-top:22px; text-align:center;">
+      <button type="submit" class="primary" id="submit-btn">Publish profile</button>
+    </div>
+    <div class="status" id="form-status"></div>
+  </form>
 </div>
 </section>
 
 <footer class="footer">
 &copy; 2026 Creator Hub. All rights reserved.
 </footer>
+
+<script>
+const listEl = document.getElementById("creator-list");
+
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"']/g, c => (
+    { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]
+  ));
+}
+
+function initials(name) {
+  return name.trim().split(/\s+/).slice(0, 2).map(w => w[0] || "").join("").toUpperCase() || "?";
+}
+
+function linkChips(c) {
+  const links = [];
+  if (c.twitter)   links.push(`<a href="https://x.com/${esc(c.twitter)}" target="_blank" rel="noopener">X</a>`);
+  if (c.instagram) links.push(`<a href="https://instagram.com/${esc(c.instagram)}" target="_blank" rel="noopener">Instagram</a>`);
+  if (c.tiktok)    links.push(`<a href="https://tiktok.com/@${esc(c.tiktok)}" target="_blank" rel="noopener">TikTok</a>`);
+  if (c.website)   links.push(`<a href="${esc(c.website)}" target="_blank" rel="noopener">Website</a>`);
+  return links.length ? `<div class="links">${links.join("")}</div>` : "";
+}
+
+function render(creators) {
+  if (!creators.length) {
+    listEl.innerHTML = `<p class="empty">No creators yet — be the first to publish your profile below.</p>`;
+    return;
+  }
+  listEl.innerHTML = creators.map(c => `
+    <div class="card">
+      <div class="avatar">${esc(initials(c.name))}</div>
+      <h3>${esc(c.name)}</h3>
+      <div class="cat">${esc(c.category)}</div>
+      <div class="bio">${esc(c.bio)}</div>
+      ${linkChips(c)}
+    </div>
+  `).join("");
+}
+
+async function loadCreators() {
+  try {
+    const res = await fetch("/api/creators");
+    if (!res.ok) throw new Error("load failed");
+    render(await res.json());
+  } catch {
+    listEl.innerHTML = `<p class="empty">Couldn't load creators right now. Please refresh.</p>`;
+  }
+}
+
+const form = document.getElementById("creator-form");
+const statusEl = document.getElementById("form-status");
+const submitBtn = document.getElementById("submit-btn");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  statusEl.className = "status";
+  statusEl.textContent = "";
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Publishing…";
+
+  const payload = Object.fromEntries(new FormData(form).entries());
+  try {
+    const res = await fetch("/api/creators", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || "Something went wrong.");
+    statusEl.className = "status ok";
+    statusEl.textContent = "Published! Your profile is now live.";
+    form.reset();
+    await loadCreators();
+    document.getElementById("browse").scrollIntoView({ behavior: "smooth" });
+  } catch (err) {
+    statusEl.className = "status err";
+    statusEl.textContent = err.message || "Something went wrong.";
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Publish profile";
+  }
+});
+
+loadCreators();
+</script>
 
 </body>
 </html>
